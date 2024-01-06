@@ -1,0 +1,49 @@
+VALVE_ENDPOINTS =
+{
+    "32valve":
+    [
+        {"x": 95, "y": -10, "location": "x"},
+        {"x": 70, "y": 60, "location": "x"},
+        {"x": 95, "y": 60, "location": "x"}
+    ],
+
+    "52valve":
+    [
+        {"x": 70, "y": -10, "location": "x"},
+        {"x": 100, "y": -10, "location": "x", "extraClass": "mainAir"},
+        {"x": -40, "y": 25, "location": "y", "extraClass": "actuator", "newState": "-1"},
+        {"x": 150, "y": 25, "location": "y", "extraClass": "actuator", "newState": "1"},
+    ],
+
+    "FlowRestrictor":
+    [
+        {"x": -10, "y": 40, "location": "y"},
+        {"x": 120, "y": 40, "location": "y"}
+    ],
+
+    "CylinderRight":
+    [
+        {"x": 13, "y": 60, "location": "x"},
+        {"x": 95, "y": 60, "location": "x"}
+    ],
+
+    "CylinderLeft":
+    [
+        {"x": 15, "y": 60, "location": "x"},
+        {"x": 98, "y": 60, "location": "x"}
+    ],
+
+    "ShuttleValve":
+    [
+        {"x": 55, "y": -10, "location": "x"},
+        {"x": -10, "y": 29, "location": "y"},
+        {"x": 120, "y": 29, "location": "y"}
+    ],
+
+    "TPiece":
+    [
+        {"x": 55, "y": -10, "location": "x"},
+        {"x": -10, "y": 25, "location": "y"},
+        {"x": 120, "y": 25, "location": "y"}
+    ]
+}

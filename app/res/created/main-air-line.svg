@@ -1,0 +1,17 @@
+<!-- <img src="res/created/main-air-line.svg" id="mainAirSupplyLine" draggable="false"> -->
+		<svg id="mainAirSupplyLine" width="700" height="60" xmlns="http://www.w3.org/2000/svg">
+			<!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+			<g>
+				<rect fill="rgba(255,255,255,0)" id="canvas_background" height="60" width="700" y="0" x="0"/>
+			</g>
+			<g>
+				<title>Main Air Line</title>
+				<line stroke-linecap="null" stroke-linejoin="null" id="svg_7" y2="30" x2="700" y1="30.205959" x1="-0.227495" fill-opacity="null" stroke-opacity="null" stroke-width="2" stroke="#000" fill="none"/>
+				<line stroke-linecap="null" stroke-linejoin="null" id="svg_1" y2="-0.497428" x2="100" y1="30.170985" x1="100" fill-opacity="null" stroke-opacity="null" stroke-width="2" stroke="#000" fill="none"/>
+				<line stroke-linecap="null" stroke-linejoin="null" id="svg_2" y2="-0.397465" x2="200" y1="29.793626" x1="200" fill-opacity="null" stroke-opacity="null" stroke-width="2" stroke="#000" fill="none"/>
+				<line stroke-linecap="null" stroke-linejoin="null" id="svg_3" y2="-0.395107" x2="300" y1="30.170985" x1="300" fill-opacity="null" stroke-opacity="null" stroke-width="2" stroke="#000" fill="none"/>
+				<line stroke-linecap="null" stroke-linejoin="null" id="svg_4" y2="-0.454756" x2="400" y1="29.416267" x1="400" fill-opacity="null" stroke-opacity="null" stroke-width="2" stroke="#000" fill="none"/>
+				<line stroke-linecap="null" stroke-linejoin="null" id="svg_5" y2="0.242811" x2="500" y1="30.170985" x1="500" fill-opacity="null" stroke-opacity="null" stroke-width="2" stroke="#000" fill="none"/>
+				<line stroke-linecap="null" stroke-linejoin="null" id="svg_6" y2="0.349939" x2="600" y1="29.793626" x1="600" fill-opacity="null" stroke-opacity="null" stroke-width="2" stroke="#000" fill="none"/>
+			</g>
+		</svg>

@@ -1,0 +1,19 @@
+TO DO:
+1. 5/2 valve correction - implement tree of precedence model for main air inputs in simulation - DONE!!!! :)))
+2. cylinder signal on both sides - DONE !!!
+3. rotating valves
+4. Add components (below)
+5. Change title and favicon
+6. Reload the circuit after downloading it to prevent the paths from getting crooked
+7. Scan pneumatic diagram to simulate it
+
+TO ADD:
+1. Shuttle valve DONE !!!!
+2. T pieces DONE !!!!
+3. Reservoir
+4. Solenoid actuator DONE !!!
+
+ISSUES:
+1. Moving one box over another makes the endpoints look and behave weirdly.
+2. (!important) make pneumatic boxes unable to overlap each other
+3. Adding two points close together with the endpoint of a box in a path has a strange effect when moving the box (the path becomes angled)

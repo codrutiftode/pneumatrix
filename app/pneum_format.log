@@ -1,0 +1,8 @@
+======== v1.0 ========
+- able to save and open pneum files with 6 main air endpoints.
+- saves the GOM, the normal canvas (with boxes and endpoints), the SVG canvas (with paths), the displays of the main air endpoints.
+
+======== v1.1 ========
+- extends previous functionalities
+- able to save the number of main air endpoints, which can be from 6 to 10.
+- declares an "importantSettings" object which can have settings added to it and save them in the file.

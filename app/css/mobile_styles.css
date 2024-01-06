@@ -1,0 +1,60 @@
+@media screen and (max-width: 1650px) {
+  #toolbox {
+    width: 20%;
+  }
+  #mainAir {
+    width: 80%;
+    left: 20%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  #toolbox {
+    width: 25%;
+  }
+  #mainAir {
+    width: 75%;
+    left: 25%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  #toolbox {
+    width: 30%;
+  }
+  #mainAir {
+    width: 70%;
+    left: 30%;
+  }
+}
+
+
+@media screen and (max-height: 830px) {
+  #toolbox-body input {
+    height: 6%;
+  }
+  #toolbox-body .toolbox-symbols {
+    height: 94%;
+  }
+  #toolbox-body input:focus {
+    height: 8%;
+  }
+  #toolbox-body input:focus + .toolbox-symbols {
+    height: 92%;
+  }
+}
+
+@media screen and (max-height: 550px) {
+  #toolbox-body input {
+    height: 8%;
+  }
+  #toolbox-body .toolbox-symbols {
+    height: 92%;
+  }
+  #toolbox-body input:focus {
+    height: 10%;
+  }
+  #toolbox-body input:focus + .toolbox-symbols {
+    height: 90%;
+  }
+}

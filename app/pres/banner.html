@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Intro</title>
+
+    <style>
+        * {box-sizing: border-box; margin: 0; padding: 0;}
+        body, html {height: 100%;}
+
+        @font-face
+        {
+            font-family: "Arial Rounded MT Bold";
+            src: url("arial_rounded.ttf");
+        }
+
+        body
+        {
+            display: flex;
+            align-items: center;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        #center
+        {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            bottom: 6%;
+            text-align: center;
+            font-family: Arial;
+            height: 50%;
+        }
+
+        #center h1
+        {
+            background-color: white;
+            flex: 2;
+            color: #fcba03;
+            font-family: "Arial Rounded MT Bold";
+            font-size: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            margin: 100px 0px;
+        }
+
+        #center img
+        {
+            flex: 1;
+            padding: 20px;
+            transform: translate(0px, -40px);
+        }
+
+        #left
+        {
+            text-align: right;
+        }
+
+        #right
+        {
+            text-align: left;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="center">
+        <h1 id="left">PNEU</h1>
+        <img src="../res/icons/favicon/favicon10.svg">
+        <h1 id="right">MATRIX</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,227 @@
+.guiMenu h1
+{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    padding: 5% 0%;
+}
+
+.guiMenu p
+{
+    float: left;
+    clear: left;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: justify;
+    margin-bottom: 6%;
+    width: 100%;
+}
+
+.guiMenu h3
+{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    float: left;
+    clear: both;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.guiMenu img
+{
+    display: inline-block;
+    float: left;
+    margin-right: 2%;
+    pointer-events: none;
+}
+
+.guiMenu ul li
+{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: justify;
+    padding: 0.5%;
+    list-style-position: inside;
+    text-align: left;
+}
+
+.guiMenu ul
+{
+    padding-left: 1%;
+    float: left;
+    clear: both;
+    width: 100%;
+    margin-bottom: 8%;
+}
+
+.guiMenu .menuFooter
+{
+    color: darkgray;
+    background-color: #383838;
+    padding: 4%;
+    margin-left: -10%;
+    font-size: 12px;
+    width: 120%;
+}
+
+.guiMenu
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+
+#componentsExplainedTable
+{
+    border-collapse: collapse;
+    border: 1px solid black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#componentsExplainedTable tr
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#componentsExplainedTable th
+{
+    flex: 1;
+    text-align: center;
+    padding: 20px 0px;
+    border: 1px solid black;
+    background-color: #fcba03;
+}
+
+#componentsExplainedTable td
+{
+    border: 1px solid black;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+
+#componentsExplainedTable .desc
+{
+    padding: 4px;
+}
+
+#componentsExplainedTable img
+{
+    float: none;
+    margin: 0;
+}
+
+/* Settings container */
+#settingsContainer
+{
+    overflow-y: auto;
+    flex-grow: 1;
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+    padding: 20px;
+}
+
+/* Custom scrollbar for settings container */
+#settingsContainer::-webkit-scrollbar {width: 20px;}
+#settingsContainer::-webkit-scrollbar-track {background-color: transparent;}
+#settingsContainer::-webkit-scrollbar-thumb {background-color: darkgray; border-radius: 10px; border: 4px solid white; }
+#settingsContainer::-webkit-scrollbar-thumb:hover {background-color: gray;}
+
+/* Gui menu settings buttons */
+.guiMenu .settingsButtons input[type="button"]
+{
+    width: 20%;
+    color: white;
+    padding: 0.6rem 0.6rem 0.4rem 0.6rem;
+    margin-right: 2%;
+    outline: none;
+    border: 1px solid rgba(0,0,0,0.15);
+    font-weight: bold;
+    font-size: 16px;
+    flex-grow: 1;
+    transition: background-color 0.1s;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.guiMenu .settingsButtons input[type="button"]:active
+{
+    border-color: white;
+}
+
+.settingsButtons
+{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 30%;
+    display: flex;
+}
+
+#saveSettingsButton
+{
+    color: #07540b;
+}
+#resetSettingsButton
+{
+    color: #07436b;
+}
+
+#saveSettingsButton:hover
+{
+    background-color: #07540b;
+    color: white;
+    cursor: pointer;
+}
+#resetSettingsButton:hover
+{
+    background-color: #07436b;
+    color: white;
+    cursor: pointer;
+}
+
+/* Settings tables styles */
+#settingsContainer table
+{
+    padding-left: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+}
+#settingsContainer td
+{
+    padding: 6px;
+}
+#settingsContainer select
+{
+    width: 100%;
+}
+
+/* Close menu button */
+#guiMenuCloseButton
+{
+    position: fixed;
+    transform: translate(0%, -100%);
+    width: 6%;
+    background-color: white;
+    border: none;
+    border-bottom: 2px solid darkred;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    color: darkred;
+    font-size: 1em;
+    padding: 10px 10px 8px 10px;
+    margin-left: 20px;
+    transition: background-color 0.08s, color 0.08s;
+}
+#guiMenuCloseButton:hover
+{
+    background-color: darkred;
+    color: white;
+    cursor: pointer;
+}
+#guiMenuCloseButton:focus
+{
+    outline: none;
+}

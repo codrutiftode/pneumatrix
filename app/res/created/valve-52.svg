@@ -1,0 +1,32 @@
+<svg width="119.99999999999999" height="59.99999999999999" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="26.742268" height="14.371134" id="canvas_background" fill="#fff"/>
+  <g id="canvasGrid" display="none">
+   <rect id="svg_1" width="100%" height="100%" x="0" y="0" stroke-width="0" fill="url(#gridpattern)"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect fill="#fff" stroke-width="3" stroke-opacity="null" fill-opacity="null" x="0.34247" y="0.19906" width="119.5" height="59.5" id="svg_2" stroke="#000"/>
+  <line fill="none" stroke="#000" stroke-width="2" stroke-opacity="null" fill-opacity="null" x1="60.0625" y1="1" x2="60.0625" y2="59.249149" id="svg_3" stroke-linejoin="null" stroke-linecap="null"/>
+  <line fill="none" stroke="#000" stroke-width="2" stroke-opacity="null" fill-opacity="null" x1="105" y1="58.832661" x2="105" y2="46" id="svg_4" stroke-linejoin="null" stroke-linecap="null"/>
+  <line fill="none" stroke="#000" stroke-width="2" stroke-opacity="null" fill-opacity="null" x1="99" y1="45.123386" x2="111" y2="45.123386" id="svg_5" stroke-linejoin="null" stroke-linecap="null"/>
+  <line fill="none" stroke="#000" stroke-width="2" stroke-opacity="null" fill-opacity="null" x1="15" y1="58.832661" x2="15" y2="46" id="svg_9" stroke-linejoin="null" stroke-linecap="null"/>
+  <line fill="none" stroke="#000" stroke-width="2" stroke-opacity="null" fill-opacity="null" x1="9" y1="45.123386" x2="21" y2="45.123386" id="svg_10" stroke-linejoin="null" stroke-linecap="null"/>
+  <line fill="none" stroke="#000" stroke-width="2" stroke-opacity="null" fill-opacity="null" x1="45" y1="1" x2="45" y2="59.249149" id="svg_11" stroke-linejoin="null" stroke-linecap="null"/>
+  <line fill="none" stroke-width="2" stroke-opacity="null" fill-opacity="null" x1="42" y1="47" x2="44" y2="60" id="svg_16" stroke-linejoin="null" stroke-linecap="null" stroke="#000"/>
+  <line fill="none" stroke-width="2" stroke-opacity="null" fill-opacity="null" x1="48" y1="47" x2="46" y2="60" id="svg_17" stroke-linejoin="null" stroke-linecap="null" stroke="#000"/>
+  <line fill="none" stroke="#000" stroke-width="2" stroke-opacity="null" fill-opacity="null" x1="105" y1="1" x2="90" y2="59.249149" id="svg_6" stroke-linejoin="null" stroke-linecap="null"/>
+  <line fill="none" stroke="#000" stroke-width="2" stroke-opacity="null" fill-opacity="null" x1="75" y1="1" x2="75" y2="59.249149" id="svg_7" stroke-linejoin="null" stroke-linecap="null"/>
+  <line fill="none" stroke-width="2" stroke-opacity="null" fill-opacity="null" x1="78" y1="47" x2="76" y2="60" id="svg_8" stroke-linejoin="null" stroke-linecap="null" stroke="#000"/>
+  <line fill="none" stroke-width="2" stroke-opacity="null" fill-opacity="null" x1="72" y1="47" x2="74" y2="60" id="svg_12" stroke-linejoin="null" stroke-linecap="null" stroke="#000"/>
+  <line fill="none" stroke="#000" stroke-width="2" stroke-opacity="null" fill-opacity="null" x1="15" y1="1" x2="30" y2="59.249149" id="svg_13" stroke-linejoin="null" stroke-linecap="null"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_14" y2="15.320323" x2="14.867871" y1="1.133953" x1="14.589707" fill-opacity="null" stroke-opacity="null" stroke-width="2" stroke="#000" fill="none"/>
+  <line stroke="#000" stroke-linecap="null" stroke-linejoin="null" id="svg_19" y2="13.373174" x2="22.656467" y1="1.273035" x1="14.867871" fill-opacity="null" stroke-opacity="null" stroke-width="2" fill="none"/>
+  <line stroke="#000" stroke-linecap="null" stroke-linejoin="null" id="svg_20" y2="13.09501" x2="97.225313" y1="0.994871" x1="105.225313" fill-opacity="null" stroke-opacity="null" stroke-width="2" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_21" y2="14.346749" x2="105.688459" y1="0.160379" x1="105.410294" fill-opacity="null" stroke-opacity="null" stroke-width="2" stroke="#000" fill="none"/>
+ </g>
+</svg>

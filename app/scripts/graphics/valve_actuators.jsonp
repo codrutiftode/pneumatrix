@@ -1,0 +1,7 @@
+ACTUATORS_INFO =
+{
+    "b": {"src":"app/res/created/button-actuator.svg"},
+    "s": {"src":"app/res/created/spring-actuator.svg"},
+    "r": {"src":"app/res/created/roller-actuator.svg"},
+    "d": {"src":"app/res/created/solenoid-actuator.svg"}
+}

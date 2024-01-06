@@ -1,0 +1,27 @@
+===== CONVENTIONS: =====
+
+# Each endpoint is a circle with 1px of border and 9px of width and height
+# Each cylinder can only extend 90px
+# The number of vertical segments on the main air line is 6
+# Each dict in ENDPOINTS_COORDINATES has a key called 'location' that has two
+possible values:
+    - "x" for 'the endpoint is on the top or bottom of the box'
+    - "y" for 'the endpoint is on the left or the right of the box'
+- 'location' is also set as a custom html attribute for endpoints in the DOM.
+
+# In createToolboxSymbol(), the toolActuators parameter is a string in the format:
+{[initial of actuator1]:[initial of actuator2]}
+ex: {b:s} - button on the left, spring on the right
+
+# Values for actuators:
+b - button
+s - spring
+r - roller
+
+# VALVE_CONF:
+Contains the configurations for each box following the specification:
+- key "1" means the "right" state, key "-1" means the "left" state.
+- all boxes are initially in the "right" state.
+- each state key ("1" or "-1") points to an array of size 2, containing two endpoints
+- the endpoints are numbered starting from 0. On the screen, from top to bottom, left to right.
+- an endpoint number of "-1" means a "main air" connection (like in the case of the 52 valve)

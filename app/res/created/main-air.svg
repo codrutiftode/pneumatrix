@@ -1,0 +1,15 @@
+<svg width="120" height="60" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <rect fill="rgba(255,255,255,0)" id="canvas_background" height="60" width="120" y="0" x="0"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Main Air</title>
+  <ellipse stroke="#000" ry="20" rx="20" id="svg_1" cy="30" cx="30" stroke-width="1.5" fill="#fff"/>
+  <ellipse ry="1" rx="1" id="svg_4" cy="30.24359" cx="30.115385" fill-opacity="null" stroke-opacity="null" stroke-width="2" stroke="#000" fill="none"/>
+  <line stroke="#000" stroke-linecap="null" stroke-linejoin="null" id="svg_5" y2="29.733541" x2="50.288462" y1="29.925849" x1="120.871589" fill-opacity="null" stroke-opacity="null" stroke-width="2" fill="none"/>
+ </g>
+</svg>

@@ -1,0 +1,125 @@
+/* Created: 15.08.2020, Codrin Iftode
+Contains the default settings and toolbox symbols for the app */
+
+DEFAULT_SETTINGS =
+{
+    "simulation":
+    {
+        "fps": 20,
+        "ma_endpoints": 6,
+        "spring_timeout": 1000
+    },
+    "graphics":
+    {
+        "actuatorMs": 2
+    }
+},
+
+TOOLBOX_SYMBOLS =
+[
+    {
+        "name": "32valve",
+        "desc": "3/2 Valve button spring-return",
+        "img": "app/res/created/valve-32_0.svg",
+        "actuators": "b:s"
+    },
+    {
+        "name": "32valve",
+        "desc": "3/2 Valve button roller",
+        "img": "app/res/created/valve-32_0.svg",
+        "actuators": "b:r"
+    },
+    {
+        "name": "32valve",
+        "desc": "3/2 Valve button solenoid",
+        "img": "app/res/created/valve-32_0.svg",
+        "actuators": "b:d"
+    },
+    {
+        "name": "32valve",
+        "desc": "3/2 Valve button button",
+        "img": "app/res/created/valve-32_0.svg",
+        "actuators": "b:b"
+    },
+    {
+        "name": "32valve",
+        "desc": "3/2 Valve roller spring-return",
+        "img": "app/res/created/valve-32_0.svg",
+        "actuators": "r:s"
+    },
+
+    {
+        "name": "32valve",
+        "desc": "3/2 Valve roller roller",
+        "img": "app/res/created/valve-32_0.svg",
+        "actuators": "r:r"
+    },
+    {
+        "name": "32valve",
+        "desc": "3/2 Valve roller button",
+        "img": "app/res/created/valve-32_0.svg",
+        "actuators": "r:b"
+    },
+    {
+        "name": "32valve",
+        "desc": "3/2 Valve roller solenoid",
+        "img": "app/res/created/valve-32_0.svg",
+        "actuators": "r:d"
+    },
+
+    {
+        "name": "32valve",
+        "desc": "3/2 Valve solenoid spring-return",
+        "img": "app/res/created/valve-32_0.svg",
+        "actuators": "d:s"
+    },
+    {
+        "name": "32valve",
+        "desc": "3/2 Valve solenoid button",
+        "img": "app/res/created/valve-32_0.svg",
+        "actuators": "d:b"
+    },
+    {
+        "name": "32valve",
+        "desc": "3/2 Valve solenoid roler",
+        "img": "app/res/created/valve-32_0.svg",
+        "actuators": "d:r"
+    },
+    {
+        "name": "32valve",
+        "desc": "3/2 Valve solenoid solenoid",
+        "img": "app/res/created/valve-32_0.svg",
+        "actuators": "d:d"
+    },
+    {
+        "name": "ShuttleValve",
+        "desc": "Shuttle valve",
+        "img": "app/res/created/shuttle-valve.svg"
+    },
+    {
+        "name": "TPiece",
+        "desc": "T-Piece",
+        "img": "app/res/created/t-piece.svg"
+    },
+    {
+        "name": "52valve",
+        "desc": "5/2 Valve",
+        "img": "app/res/created/valve-52.svg"
+    },
+
+    {
+        "name": "FlowRestrictor",
+        "desc": "Flow Restrictor",
+        "img": "app/res/created/flow-restrictor-left.svg"
+    },
+    {
+        "name": "CylinderRight",
+        "desc": "Double-acting Cylinder (Right)",
+        "img": "app/res/created/cylinder-right.svg",
+    },
+    {
+        "name": "CylinderLeft",
+        "desc": "Double-acting Cylinder (Left)",
+        "img": "app/res/created/cylinder-left.svg"
+    },
+]

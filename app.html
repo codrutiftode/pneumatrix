@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pneumatrix - Pneumatics Simulator</title>
+<link href="app/css/styles.css" rel="stylesheet" type="text/css">
+<link href="app/css/menu_styles.css" rel="stylesheet" type="text/css">
+<link href="app/css/mobile_styles.css" rel="stylesheet" type="text/css">
+<link rel="icon" href="public/favicon.svg">
+
+<!-- GOM -->
+<script src="app/scripts/gom.js"></script>
+
+<!-- Helper scripts -->
+<script src="app/scripts/app_properties.jsonp"></script>
+<script src="app/scripts/graphics/valve_endpoints.jsonp"></script>
+<script src="app/scripts/graphics/valve_actuators.jsonp"></script>
+<script src="app/scripts/graphics/valve_extra.jsonp"></script>
+<script src="app/scripts/graphics/valve_conf.jsonp"></script>
+<script src="app/scripts/graphics/menus_data.js"></script>
+<script src="app/scripts/helpers.js"></script>
+
+<!-- Graphics Engine -->
+<script src="app/scripts/graphics_core.js"></script>
+<script src="app/scripts/graphics/box.js"></script>
+<script src="app/scripts/graphics/endpoints.js"></script>
+<script src="app/scripts/graphics/structure.js"></script>
+<script src="app/scripts/graphics/paths.js"></script>
+<script src="app/scripts/graphics/actuators.js"></script>
+
+<!-- Simulation Software - uses both Graphics and GOM -->
+<script src="app/scripts/simulation.js"></script>
+
+<!-- High-level scripts -->
+<script src="app/scripts/main.js"></script>
+<script src="app/scripts/transformer.js"></script>
+<script src="app/scripts/contextmenu.js"></script>
+
+</head>
+
+<body onmousedown="contextmenu.hideRightClickMenu();" id="body">
+
+	<!-- Box context menu -->
+	<div id="rightClickMenu">
+		<p id="currentPneumaticId"></p>
+		<div id="currentPneumaticType"></div>
+		<h4 onmousedown="contextmenu.removeClicked();">Remove</h4>
+		<h4 onmousedown="contextmenu.rotateCWClicked();" style="display: none;">Rotate CW</h4> <!-- Hidden for now, still developing --> 
+		<h4 onmousedown="contextmenu.rotateACWClicked();" style="display: none;">Rotate ACW</h4> <!-- Hidden for now, still developing --> 
+		<div id="rightClickExtra">
+		</div>
+	</div>
+
+	<!-- Canvas for drawing svg paths -->
+	<svg id="svgCanvas" xlmns="http://www.w3.org/2000/svg" width="1920px" height="1080px" viewBox="0 0 1920 1080" preserveAspectRatio="xMinYMin slice"
+	onmousemove="graphics.endpoints.svgCanvasMouseMove();" onmousedown="graphics.endpoints.svgPressed_WhileDrawingPipe();"></svg>
+
+	<!-- Toolbox -->
+	<div id="toolbox">
+		<section id="toolbox-body">
+			<div class="toolbox-header"><p>Toolbox</p></div>
+			<div class="toolbox-content">
+				<input type="text" placeholder="Search..." onkeyup="graphics.structure.searchBarTextChange(this);">
+				<div class="toolbox-symbols">
+
+				</div>
+			</div>
+		</section>
+
+		<section id="toolbox-extra">
+			<div class="toolbox-header"><p>Menu</p></div>
+			<div class="toolbox-content">
+				<button class="toolbox-button" onclick="graphics.structure.displayMenu('settings');"><img src="app/res/icons/settings.svg" buttontype="settings" draggable="false"></img></button>
+				<button class="toolbox-button" onclick="graphics.structure.displayMenu('info');"><img src="app/res/icons/info.svg" buttontype="info" draggable="false"></img></button>
+				<button class="toolbox-button" onclick="graphics.structure.displayMenu('open');"><img src="app/res/icons/open.svg" buttontype="open" draggable="false"></img></button>
+				<button class="toolbox-button" onclick="graphics.structure.displayMenu('save');"><img src="app/res/icons/save.svg" buttontype="save" draggable="false"></img></button>
+			</div>
+		</section>
+	</div>
+
+	<!-- Parent for all boxes present in the scene -->
+	<div id="canvas"></div>
+
+	<!-- Main Air region -->
+	<div id="mainAir">
+		<button id="mainSupplySwitch" onclick="mainSupplySwitchClick(this);">OFF</button>
+		<img id="mainAirSupply" src="app/res/created/main-air.svg" draggable="false">
+
+		<!-- Main Air endpoints -->
+		<div class="endpoints" style="display: block; transform: translate(0px, 0px);"></div>
+
+		<!-- Main Air supply line svg -->
+		<svg id="mainAirSupplyLine" width="700" height="60" xmlns="http://www.w3.org/2000/svg">
+			<g>
+				<rect fill="rgba(255,255,255,0)" id="canvas_background" height="60" width="700" y="0" x="0"/>
+			</g>
+			<g>
+				<title>Main Air Line</title>
+			</g>
+		</svg>
+	</div>
+
+	<!-- All menus region -->
+	<div id="menuContentContainer" onclick="graphics.structure.hideCurrentMenu();">
+		<div id="menuContent" onclick="event.stopPropagation();">
+			<button id="guiMenuCloseButton" onclick="graphics.structure.hideCurrentMenu();"><b>Close (x)</b></button>
+			<div style="height: 100%; width: 100%;">
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

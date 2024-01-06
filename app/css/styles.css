@@ -1,0 +1,425 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: white;
+  overflow-x: hidden;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* A pneumatic box object on the canvas */
+.pneumatic {
+  position: absolute;
+}
+
+/* The Toolbox overall */
+#toolbox {
+  width: 15%;
+  height: 100%;
+  position: fixed;
+  /* background-color: #36445e; */
+  background-color: white;
+  padding: 3px;
+
+  /* shadow */
+  /*
+	-webkit-box-shadow: 6px 0px 10px -1px rgba(92,92,92,1);
+	-moz-box-shadow: 6px 0px 10px -1px rgba(92,92,92,1);
+	box-shadow: 6px 0px 10px -1px rgba(92,92,92,1);
+	*/
+}
+
+/* The Toolbox title block */
+.toolbox-header {
+  width: 100%;
+  height: 5%;
+  padding-top: 5%;
+  position: relative;
+  z-index: 9;
+}
+
+/* Toolbox category panes */
+.toolbox-header p {
+  background-color: white;
+  position: relative;
+  width: 40%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-width: 1px 1px 0px 1px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 4px 10px;
+  margin-left: 12px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: black;
+  text-align: center;
+}
+
+/* All sections in toolbox */
+.toolbox-content {
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0px 0px 1.4px rgba(0, 0, 0, 0.024),
+    0px 0px 3.8px rgba(0, 0, 0, 0.035), 0px 0px 9px rgba(0, 0, 0, 0.046),
+    0px 0px 30px rgba(0, 0, 0, 0.07);
+}
+
+.toolbox-content::before,
+.toolbox-header p::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+  z-index: -1;
+  /* -webkit-box-shadow: 1px 1px 10px -3px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 10px -3px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 10px -3px rgba(0,0,0,0.75); */
+}
+
+/* Toolbox search bar */
+#toolbox-body input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 0.4rem;
+  outline: none;
+  transition: padding 0.2s, font-size 0.2s;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: black;
+}
+
+/* Toolbox search bar click state */
+#toolbox-body input:focus {
+  padding: 0.6rem;
+  font-size: 16px;
+}
+
+#toolbox-body input:focus + .toolbox-symbols {
+  height: 95%;
+}
+
+/* Toolbox main region with pneumatic symbols */
+#toolbox-body .toolbox-symbols {
+  padding-left: 16px;
+  overflow-y: auto;
+  height: 97%;
+  background-color: white;
+  transition: height 0.2s;
+}
+
+/* Toolbox extra region at the bottom */
+#toolbox-extra .toolbox-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Custom scrollbar for toolbox body content */
+#toolbox-body .toolbox-symbols::-webkit-scrollbar {
+  width: 16px;
+}
+#toolbox-body .toolbox-symbols::-webkit-scrollbar-track {
+  background-color: white;
+}
+#toolbox-body .toolbox-symbols::-webkit-scrollbar-thumb {
+  background-color: #eeeeee;
+  border-radius: 10px;
+  border: 4px solid white;
+}
+#toolbox-body .toolbox-symbols::-webkit-scrollbar-thumb:hover {
+  background-color: #d1d0d0;
+}
+
+/* Class for buttons in the toolbox extra region */
+.toolbox-button {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  color: black;
+  padding: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 5px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.toolbox-button:hover {
+  box-shadow: 0px 0px 1.1px rgba(0, 0, 0, 0.024),
+    0px 0px 3.1px rgba(0, 0, 0, 0.035), 0px 0px 7.5px rgba(0, 0, 0, 0.046),
+    0px 0px 25px rgba(0, 0, 0, 0.07);
+}
+
+.toolbox-button img {
+  width: 26px;
+  height: 26px;
+  margin: 4px;
+  pointer-events: none;
+}
+
+/* Toolbox elements */
+.tool {
+  float: left;
+  width: 100%;
+  margin-top: 8%;
+}
+
+/* Disabled toolbox elements - FREE TRIAL LICENSE ONLY */
+.tool-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Container for a toolbox symbol */
+.toolContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* All images in Toolbox */
+.toolSymbol {
+  width: 120px;
+}
+
+/* All paragraphs in Toolbox */
+.tool p {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  padding: 10px;
+  color: black;
+}
+
+/* The endpoints container for each pneumatic box object on canvas */
+.endpoints {
+  display: none;
+  position: absolute;
+  z-index: 9;
+}
+
+.endpoint {
+  box-sizing: content-box;
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: white;
+}
+
+/* Actuators container class */
+.actuators {
+  width: 120px;
+  height: 60px;
+  position: absolute;
+}
+
+/* Actuator class */
+.actuator {
+  position: static;
+  width: 60px;
+  height: 60px;
+}
+
+/* Background svg canvas */
+#svgCanvas {
+  position: fixed;
+}
+
+/* Right click menu */
+#rightClickMenu {
+  pointer-events: none;
+  opacity: 0;
+  position: absolute;
+  min-width: 120px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  z-index: 300;
+  padding-bottom: 2px;
+  box-shadow: 0px 0px 1.1px rgba(0, 0, 0, 0.024),
+    0px 0px 3.1px rgba(0, 0, 0, 0.035), 0px 0px 7.5px rgba(0, 0, 0, 0.046),
+    0px 0px 25px rgba(0, 0, 0, 0.07);
+  transition: opacity 0.1s;
+}
+
+/* Invisible container for the currently clicked pneumatic box id */
+#currentPneumaticId {
+  display: none;
+}
+
+/* Right click menu title */
+#currentPneumaticType {
+  padding: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  color: gray;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* Right click menu buttons */
+#rightClickMenu h4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 8px 20px;
+  font-size: 12px;
+  margin-top: 2px;
+  transition: background-color 0.2s;
+}
+#rightClickMenu h4:hover {
+  /* color: #c40808; */
+  background-color: rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+/* Main Air */
+#mainAir {
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  width: 85%;
+}
+
+#mainAirSupplyLine {
+  float: right;
+}
+
+#mainAirSupply {
+  position: absolute;
+  width: 120px;
+  float: left;
+  padding: 0;
+  margin: 0;
+}
+
+/* Main supply switch button */
+#mainSupplySwitch {
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  top: -20px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: 1px solid black;
+  /* box-shadow: 0px 0px 1.4px rgba(0, 0, 0, 0.024),
+    0px 0px 3.8px rgba(0, 0, 0, 0.035), 0px 0px 9px rgba(0, 0, 0, 0.046),
+    0px 0px 30px rgba(0, 0, 0, 0.07); */
+  border-radius: 6px;
+  outline: none;
+  padding-bottom: 6px;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Extra components container */
+.extraComponents {
+  position: relative;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Extra components */
+.extraComponents > * {
+  position: absolute;
+}
+
+/* Flow restrictor dial */
+.flowRestrictorDial {
+  pointer-events: all;
+  width: 60px;
+  margin-left: 30px;
+  height: 24px;
+  padding: 4px;
+  text-align: center;
+}
+
+/* Make number input arrow buttons always be visible (in Chrome)*/
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+/* Actuator endpoints of 52valve */
+.endpoint.actuator {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+}
+
+/* Container for content of any menu */
+#menuContentContainer {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contains the content of any menu */
+#menuContent {
+  position: relative;
+  z-index: 11;
+  width: 50%;
+  height: 80%;
+  background-color: white;
+  border-radius: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar for menu content */
+#menuContent::-webkit-scrollbar {
+  width: 20px;
+}
+#menuContent::-webkit-scrollbar-track {
+  background-color: transparent;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#menuContent::-webkit-scrollbar-thumb {
+  background-color: darkgray;
+  border-radius: 10px;
+  border: 4px solid white;
+}
+#menuContent::-webkit-scrollbar-thumb:hover {
+  background-color: gray;
+}

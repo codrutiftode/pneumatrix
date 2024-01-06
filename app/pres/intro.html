@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Intro</title>
+
+    <style>
+        * {box-sizing: border-box; margin: 0; padding: 0;}
+        body, html {height: 100%;}
+
+        body
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        @keyframes twinkle-image
+        {
+            40% {transform: rotateZ(10deg);}
+            100% {transform: rotateZ(0deg);}
+        }
+
+        @keyframes fade-background-in-anim
+        {
+            30%
+            {
+                transform: rotateZ(30deg);
+            }
+            100%
+            {
+                opacity: 100%;
+                transform: rotateZ(30deg);
+            }
+        }
+
+        @keyframes fade-background-out-anim
+        {
+            0%
+            {
+                opacity: 100%;
+                transform: rotateZ(30deg);
+            }
+            100%
+            {
+                opacity: 0%;
+                transform: rotateZ(30deg);
+            }
+        }
+
+        @keyframes fade-content-in-anim
+        {
+            100%
+            {
+                opacity: 100%;
+                transform: translate(0px, 0px);
+            }
+        }
+
+        .fade-content-in
+        {
+            animation-name: fade-content-in-anim;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        .fade-background-out
+        {
+            animation-name: fade-background-out-anim;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+        }
+
+        .fade-background-in
+        {
+            animation-name: fade-background-in-anim;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        #content
+        {
+            position: relative;
+            bottom: 4%;
+            z-index: 100;
+            opacity: 0%;
+            transform: translate(0px, -20px);
+        }
+
+        #center
+        {
+            position: relative;
+            bottom: 6%;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        #center img
+        {
+            width: 200px;
+            animation-name: twinkle-image;
+            animation-duration: 0.4s;
+            animation-fill-mode: forwards;
+            animation-delay: 4.5s;
+        }
+
+        #center h1
+        {
+            font-size: 50px;
+        }
+
+        #center h3
+        {
+            color: gray;
+            padding: 10px;
+            font-style: italic;
+        }
+
+        #lower
+        {
+            position: relative;
+            top: 10%;
+            font-family: Arial;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .fade-content
+        {
+            opacity: 100% !important;
+            transform: translate(0px, 0px) !important;
+        }
+
+        #background
+        {
+            /* transform: rotateZ(30deg); */
+            background-color: white;
+            opacity: 0%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .moving-box
+        {
+            position: absolute;
+        }
+
+        .grid-row
+        {
+            position: relative;
+            left: 0px;
+        }
+
+    </style>
+
+    <script>
+        window.addEventListener("load", () =>
+        {
+            let background = document.getElementById("background");
+            let screenWidth = document.body.offsetWidth;
+            let screenHeight = document.body.offsetHeight;
+            let filenames = ["shuttle-valve", "valve-32", "valve-52", "cylinder-left", "cylinder-right", "t-piece", "flow-restrictor-left"];
+
+            function createRandomBox(nBoxes, i, j, row)
+            {
+                // Set random box source
+                let box = document.createElement("img");
+                box.src = "../res/created/" + filenames[Math.round(Math.random() * (filenames.length - 1))] + ".svg";
+
+                // Set random box position
+                let xCoord = Math.round(screenWidth / nBoxes) * (j - 6);
+                let initTransform = "translate(" + xCoord + "px, 0px)";
+                box.style.transform = initTransform;
+                box.classList.add("moving-box");
+
+                // Append box to background
+                row.appendChild(box);
+            }
+
+            let nBoxesIn1Dim = 12;
+            let boxIntervals = [];
+            for (let i = 0; i < nBoxesIn1Dim; i++)
+            {
+                // Create new row
+                let row = document.createElement("div");
+                row.classList.add("grid-row");
+                row.style.height = Math.round(screenHeight / nBoxesIn1Dim) + "px";
+
+                // Add random boxes to the row
+                for (let j = 0; j < nBoxesIn1Dim * 2; j++)
+                {
+                    createRandomBox(nBoxesIn1Dim, i, j, row);
+                }
+
+                // Set row animation
+                let timeMS = Math.round(Math.random() * 20 + 20);
+                let stepValue = Math.round(Math.random() + 1)
+                let step = (i % 2 == 0 ? stepValue : -stepValue);
+
+                let intervalID = setInterval(() => {
+                    let left = row.getBoundingClientRect().x;
+                    row.style.left = (left + step) + "px";
+                }, timeMS);
+
+                // Save interval id
+                boxIntervals.push(intervalID);
+
+                // Add row to background
+                background.appendChild(row);
+            }
+
+            // Show logo and title
+            setTimeout(() =>
+            {
+                document.getElementById("background").classList.add("fade-background-in");
+                setTimeout(() =>
+                {
+                    document.getElementById("background").classList.remove("fade-background-in");
+                    document.getElementById("background").classList.add("fade-background-out");
+                    setTimeout(() =>
+                    {
+                        document.getElementById("content").classList.add("fade-content-in");
+                    }, 600);
+                }, 1500);
+            }, 1000);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="background">
+    </div>
+    <div id="content">
+        <div id="center">
+            <img src="../res/icons/favicon/favicon10.svg">
+            <h1>Pneumatrix</h1>
+            <h3>A Pneumatics Simulator</h3>
+        </div>
+        <div id="lower">
+            <i>Developed by - Codrin Iftode</i>
+        </div>
+    </div>
+</body>
+</html>

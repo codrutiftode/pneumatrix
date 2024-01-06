@@ -1,0 +1,52 @@
+VALVE_EXTRA =
+{
+    "52valve":
+    [{
+        "type": "img",
+        "src": "app/res/created/main-air-extra-component.svg",
+        "transform": "translate(60px, 60px)"
+    },
+    {
+        "type": "img",
+        "src": "app/res/created/valve-52-extra-connector.svg",
+        "transform": "translate(-30px, 0px)"
+    },
+    {
+        "type": "img",
+        "src": "app/res/created/valve-52-extra-connector.svg",
+        "transform": "translate(120px, 0px) scale(-1, 1)"
+    }],
+
+    "CylinderRight":
+    [{
+        "type": "img",
+        "src": "app/res/created/cylinder-head-right.svg",
+        "transform": "translate(0px, 0px)",
+    }],
+
+    "CylinderLeft":
+    [{
+        "type": "img",
+        "src": "app/res/created/cylinder-head-left.svg",
+        "transform": "translate(0px, 0px)",
+    }],
+
+    "FlowRestrictor":
+    [{
+        "type": "input",
+        "transform": "translate(0px, 70px)",
+        "extraAttributes":
+        [
+            {"attribute": "class", "value": "flowRestrictorDial"},
+            {"attribute": "type", "value": "number"},
+            {"attribute": "step", "value": "0.05"},
+            {"attribute": "value", "value": "1"},
+            {"attribute": "max", "value": "1"},
+            {"attribute": "min", "value": "0"},
+            {
+                "attribute": "onchange",
+                "value": "graphics.box.restrictorDialChange(this);"
+            }
+        ]
+    }]
+}
