@@ -11,7 +11,14 @@ let MENUS_HTML = {
             <div>Pneumatrix</div>
             <i style=" font-size: 12px; color: gray;">A Pneumatics Simulator</i>
         </h1>
-        <p>This is (hopefully) one of the best software apps out there for simulating pneumatic circuits. If you ever feel like you need help with how it works (after all, I am also sometimes puzzled by software, even my own), this page will be here for you.</p>
+
+        <p>Students learn when they do things.
+        </br></br>For pneumatics, exercises and diagrams are just not interactive enough. And building circuits in real life is expensive and time consuming.
+        </br></br>Hence, Pneumatrix, a pneumatics intuition giver. Play around, have fun: do things. The only goal is for you to get a feel for pneumatic circuits!</p>
+
+        <h3>Contribute on GitHub!</h3>
+        <p><iframe src="https://ghbtns.com/github-btn.html?user=codrutiftode&repo=pneumatrix&type=star&size=large&text=true" frameborder="0" scrolling="0" width="200" height="30" title="GitHub"></iframe></br>
+        This is not (yet) a fully functional pneumatics simulator (despite shamelessly calling itself so). There are many bugs remaining. Make it better on <a target="_blank" noreferrer noopener href="https://github.com/codrutiftode/pneumatrix">GitHub</a>.</p>
 
         <h3>Video Tutorial</h3>
         <p>
@@ -81,7 +88,7 @@ let MENUS_HTML = {
         <h3>Actuators</h3>
         <p>To change the state of a valve (in pneumatic terms, to actuate it), simply click on the actuator on the right or the left of the pneumatic box.
         <br><br>Types of actuators currently supported: Push-button, roller, spring, solenoid.
-        <br><i>Note:</i> The roller can be actuated by a cylinder, the spring needs to be clicked to work (for now, at least).
+        <br><br><i>Note:</i> The roller can be actuated by a cylinder. The spring is actuated automatically after one second (if it isn't, you might need to click it).
         </p>
 
         <h3>Components - Explained</h3>
@@ -130,8 +137,9 @@ let MENUS_HTML = {
         <br>
 
         <p class="menuFooter">
-            Developer: Codrin Iftode - dreamer, passionate programmer and, sometimes, university student.<br>
-            Copyright &copy; 2020-2022 Codrin Iftode. All rights reserved.<br>
+            Developer: Codrin Iftode - dreamer, artist, programmer and, sometimes, university student.<br>
+            Contact: <a target="_blank" noreferrer noopener href="https://www.linkedin.com/in/codrin-iftode/" style="color: royalblue">https://www.linkedin.com/in/codrin-iftode/</a><br>
+            Copyright &copy; Codrin Iftode. All rights reserved.<br>
         </p>
     </div>
     `,
